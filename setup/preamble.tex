@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Encoding and fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Choose the output font encoding
+\usepackage[T1]{fontenc}
+% Choose the input encoding (how your source files are encoded)
+\usepackage[utf8]{inputenc}
+
+% Use the vector font Latin Modern which is going
+% to be the default font in latex in the future.
+% \usepackage{lmodern}
+% \pdfmapfile{ua1r8r.map}
+
+% Make latex understand and use the typographic
+% rules of the language used in the document.
+\usepackage[english, french]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphics (images, tables, ...)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Figures - TIKZ (Build figures inside LaTeX)
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Defines new environments such as equation,
+% align and split 
+% Provides additional features to amsmath
+\usepackage[intlimits]{mathtools}
+\usepackage{relsize}
+% Adds new math symbols
+\usepackage{amssymb}
+
+% Use theorems in your document
+% The ntheorem package is also used for the example environment
+% When using thmmarks, amsmath must be an option as well. Otherwise \eqref doesn't work anymore.
+\usepackage[framed,amsmath,thmmarks]{ntheorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Physics and chemistry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Provide SI units macros, to use proper formatting that respects SI standards
+\usepackage{siunitx}
+\sisetup{decimalsymbol=comma}
+\sisetup{binary-units}
+\sisetup{detect-weight}
+\sisetup{inter-unit-product=\ensuremath{{} \cdot {}}}
+\usepackage{cancel}
+
+\usepackage[version=4]{mhchem}
+
+% Macros are defined in setup/macros.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Enables the use FiXme refferences. Syntax: \fxnote{...} %%%
+% When the document is in "final" version instead of "draft",
+% an error will occur for every FiXme under compilation.
+\usepackage[french, silent]{fixme}
+\fxusetheme{color}
+\fxsetup{layout=marginclue,footnote}

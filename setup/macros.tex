@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             UNITS, EQUATIONS AND TEXT             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\eq}[2]{\si{#1} &= \si{#2}}
+\newcommand{\iaoi}{&& &\Updownarrow&&}  % 'If and only if' sign printed vertically between two equations
+\newcommand{\eqOne}[2]{\si{#1} &= \si{#2} &\nonumber\\}
+\newcommand{\eqTwo}[1]{&\ \ \ \ \si{#1}&}
+% Text:
+\newcommand{\tx}[1]{\text{#1}}
+\newcommand{\deriv}{\mathrm{d}}
+
+\newcommand{\noun}[1]{\textsc{#1}}
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+% Matrices, vectors & quaternions
+%\renewcommand{\vec}[1]{\boldsymbol{\bf{#1}}}
+\newcommand{\mat}[1]{#1}
+\newcommand{\quat}[1]{\boldsymbol{\mathbf{#1}}}
+\newcommand{\quatprod}{\otimes}
+
+% Useful for declaration of math terms signification, right after an equation
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+% Vertical line in equations ie. |_x=y (whereTwo stacks two equalities at the line)
+\newcommand{\where}[1]{ \left.\rule{0cm}{.5cm}\right\vert\rule{0cm}{.4cm}_{\substack{\rule{0cm}{.15cm}\\ \si{#1} }} }
+\newcommand{\whereTwo}[2]{ \left.\rule{0cm}{.67cm}\right\vert\rule{0cm}{.5cm}_{\substack{\si{#1} \rule{0cm}{.19cm}\\\vspace{-.1cm}\\ \si{#2}}} }
+
+\newcommand{\sample}[1]{\ensuremath{#1}}
+
+\makeatletter
+  % Reaction equations environments
+  \newcommand\reaction@[1]{\begin{equation}\ce{#1}\end{equation}}
+  \newcommand\reaction@nonumber[1]{\begin{equation*}\ce{#1}\end{equation*}}
+  \newcommand\reaction{\@ifstar{\reaction@nonumber}{\reaction@}}
+
+  % Layer stacks and redox couples, useful in physics
+  \newcommand*\stackslash{\text{/}\allowbreak}
+  \newcommand*\stackhyphen{\text{-}\allowbreak}
+  \newcommand*\stackpipe{\text{|}\allowbreak}
+  \newcommand\stack[1]{%
+    \cesplit{%
+      {\/}{\c{stackslash}}%
+      {-}{\c{stackhyphen}}%
+      {\|}{\ \c{stackpipe}\ }%
+    }{#1}%
+  }
+  \newcommand*\dopingcolumn{\text{:}\allowbreak}
+  \newcommand\doped[1]{%
+    \cesplit{%
+      {:}{\c{dopingcolumn}}%
+    }{#1}%
+  }
+
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 TIKZ SETTINGS                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{arrows.meta}
+\tikzset{
+  block/.style  = {draw, thick, rectangle,
+                     minimum height = 2.1em,
+                     minimum width = 1.7em},
+  sum/.style    = {draw, circle, inner sep=1.5pt},
+  basic/.style  = {draw, text width=190pt, minimum height=45pt,
+                   font=\sffamily, inner sep=0pt},
+}
+
+% Node macro to build trees
+\newcommand\mynode[5][]{
+  \node[#1] (#2)
+  {\parbox{20pt}{%
+      \includegraphics[width=45pt]{#3}}%
+    \parbox{25pt}{\mbox{}}%  
+    \parbox{\dimexpr190pt-30pt\relax}{#4\\[.4ex]#5}%
+  };
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  REFERENCES                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Chapter
+\newcommand{\Chapref}[1]{\emph{Chapitre \ref{#1}}}
+\newcommand{\chapref}[1]{\emph{chapitre \ref{#1}}}
+%Section
+\newcommand{\Secref}[1]{\emph{Section \ref{#1}}}
+\newcommand{\secref}[1]{\emph{section \ref{#1}}}
+%subSection
+\newcommand{\Subsecref}[1]{\emph{Sous-section \ref{#1}}}
+\newcommand{\subsecref}[1]{\emph{sous-section \ref{#1}}}
+%Appendix
+\newcommand{\Appref}[1]{\emph{Annexe \ref{#1}}}
+\newcommand{\appref}[1]{\emph{annexe \ref{#1}}}
+%Listings
+\newcommand{\Coderef}[1]{\emph{Listing: \ref{#1}}}
+\newcommand{\coderef}[1]{\emph{listing: \ref{#1}}}
+%Figure:
+\newcommand{\Figref}[1]{\emph{Figure \ref{#1}}}
+\newcommand{\figref}[1]{\emph{figure \ref{#1}}}
+\newcommand{\FigrefTwo}[2]{\emph{Figures \ref{#1}} et \emph{\ref{#2}}}
+\newcommand{\figrefTwo}[2]{\emph{figures \ref{#1}} et \emph{\ref{#2}}}
+%Table:
+\newcommand{\Tableref}[1]{\emph{Tableau \ref{#1}}}
+\newcommand{\tableref}[1]{\emph{tableau \ref{#1}}}
+
+%Expressions:
+\newcommand{\Expr}[1]{\emph{Expression (\ref{#1})}}
+\newcommand{\expr}[1]{\emph{expression (\ref{#1})}}
+
+%Equations:
+%1 equation:
+\newcommand{\Eqref}[1]{\emph{Équation (\ref{#1})}}
+\renewcommand{\eqref}[1]{\emph{équation (\ref{#1})}}
+%2 equations:
+\newcommand{\EqrefTwo}[2]{\emph{Équations (\ref{#1})} et \emph{(\ref{#2})}}
+\newcommand{\eqrefTwo}[2]{\emph{équations (\ref{#1})} et \emph{(\ref{#2})}}
+%3 equations:
+\newcommand{\EqrefThree}[3]{\emph{Equation (\ref{#1})}, \emph{(\ref{#2})} and \emph{(\ref{#3})}}
+\newcommand{\eqrefThree}[3]{\emph{equation (\ref{#1})}, \emph{(\ref{#2})} and \emph{(\ref{#3})}}
+%4 equations:
+\newcommand{\EqrefFour}[4]{\emph{Equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})} and \emph{(\ref{#4})}}
+\newcommand{\eqrefFour}[4]{\emph{equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})} and \emph{(\ref{#4})}}
+%5 equations:
+\newcommand{\EqrefFive}[5]{\emph{Equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})} and \emph{(\ref{#5})}}
+\newcommand{\eqrefFive}[5]{\emph{equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})} and \emph{(\ref{#5})}}
+%6 equations:
+\newcommand{\EqrefSix}[6]{\emph{Equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})}, \emph{(\ref{#5})} and \emph{(\ref{#6})}}
+\newcommand{\eqrefSix}[6]{\emph{equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})}, \emph{(\ref{#5})} and \emph{(\ref{#6})}}
+%7 equations:
+\newcommand{\EqrefSeven}[7]{\emph{Equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})}, \emph{(\ref{#5})}, \emph{(\ref{#6})} and \emph{(\ref{#7})}}
+\newcommand{\eqrefSeven}[7]{\emph{equation (\ref{#1})}, \emph{(\ref{#2})}, \emph{(\ref{#3})}, \emph{(\ref{#4})}, \emph{(\ref{#5})}, \emph{(\ref{#6})} and \emph{(\ref{#7})}}
