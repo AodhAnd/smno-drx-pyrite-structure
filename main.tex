@@ -10,7 +10,7 @@
      %-------------------------------------------------------------------------
      % Information about journal to which submitted
      %-------------------------------------------------------------------------
-     \journalcode{A}              % Indicate the journal to which submitted
+     \journalcode{E}              % Indicate the journal to which submitted
                                   %   A - Acta Crystallographica Section A
                                   %   B - Acta Crystallographica Section B
                                   %   C - Acta Crystallographica Section C
@@ -94,51 +94,14 @@ apparient notre minéral, puis par la méthode de \noun{Laue}.
      % Now enter the text of the document in multiple \section's, \subsection's
      % and \subsubsection's as required.
 
-\section{Introduction}
-
-La pyrite, de formule chimique \ce{FeS2}, est plus connue sous le nom de «~pierre à feu~». Elle doit d'ailleurs son nom à sa capacité à produire des étincelles lorsqu'on la frotte ou qu'on la soumet à des chocs avec certains autres matériaux. Longtemps surnommée «~l'or des fous~» de par sa teinte et son aspect qui ont sûrement trompé plus d'un chercheur d'or, la pyrite est aujourd'hui particulièrement utilisée en joaillerie ou dans l'industrie chimique, pour la fabrication d'acide sulfurique. \fxnote{Citation needed}\\
-On la trouve naturellement dans des gisements à des endroits très divers, en Europe comme en Amérique (lieu d'une «~ruée vers l'or~» au XIXe siècle) souvent mélangée à d'autres composés proches où le fer est substitué par d'autres métaux.\\
-Les monocristaux de \ce{FeS2} se présentent sous deux apparences différentes~: cubique ou pentagono-dodécaédrique.
-
-% Forme des monocristaux
-% 
-
-\section{Section title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
-\subsection{Title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
-\subsubsection{Title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
+\input{content/body}
 
      % Appendices appear after the main body of the text. They are prefixed by
      % a single \appendix declaration, and are then structured just like the
      % body text.
 
 \appendix
-\section{Appendix title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
-\subsection{Title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
-\subsubsection{Title}
-
-Text text text text text text text text text text text text text text
-text text text text text text text.
-
+\input{content/appendix}
 
      %-------------------------------------------------------------------------
      % The back matter of the paper - acknowledgements and references
@@ -155,11 +118,11 @@ text text text text text text text.
 % \reference{Author, A. \& Author, B. (1984). \emph{Journal} \textbf{Vol}, 
 % first page--last page.}
 % \end{references}
-% \cite{knuth84}
+\cite{knuth84}
 
 %% Note added by Overleaf: If using bibtex, remove the "references" environment above, and uncomment the following lines.
-\bibliographystyle{setup/iucr}
-\referencelist{setup/sources}
+\bibliographystyle{iucr}
+\referencelist
 
      %-------------------------------------------------------------------------
      % TABLES AND FIGURES SHOULD BE INSERTED AFTER THE MAIN BODY OF THE TEXT

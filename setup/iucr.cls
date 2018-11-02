@@ -4896,24 +4896,24 @@
       }}
     \newbox\c@pyline
     \global\setbox\c@pyline=\hbox to 0mm{\vbox{%
-      \hsize=56mm
-      %\vfill%
-      \fontsize{7}{10pt}\sffamily%
-      \ifc@pyright%
-        \hbox{\copyright\  \j@urnalyear\
-        International Union of Crystallography%
-        }\par%
-      \fi%
-      \if\j@urnalcode\@A@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@B@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@C@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@D@{\noindent Printed in Singaport -- all rights reserved}\fi%
-      \if\j@urnalcode\@E@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@F@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@J@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \if\j@urnalcode\@J@{\noindent \relax}\fi%
-      \if\j@urnalcode\@S@{\noindent Printed in Singapore -- all rights reserved}\fi%
-      \par$\phantom{(}$%                         % hack to balance boxes
+      % \hsize=56mm
+      % %\vfill%
+      % \fontsize{7}{10pt}\sffamily%
+      % \ifc@pyright%
+      %   \hbox{\copyright\  \j@urnalyear\
+      %   International Union of Crystallography%
+      %   }\par%
+      % \fi%
+      % \if\j@urnalcode\@A@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@B@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@C@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@D@{\noindent Printed in Singaport -- all rights reserved}\fi%
+      % \if\j@urnalcode\@E@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@F@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@J@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \if\j@urnalcode\@J@{\noindent \relax}\fi%
+      % \if\j@urnalcode\@S@{\noindent Printed in Singapore -- all rights reserved}\fi%
+      % \par$\phantom{(}$%                         % hack to balance boxes
       }}
     \mkttltrue
   \fi

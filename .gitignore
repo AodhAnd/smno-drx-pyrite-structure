@@ -33,3 +33,11 @@
 *.xdy
 *.tdo
 *.fls
+*.thm
+*.run.xml
+*.bcf
+
+main.pdf
+
+*.sublime-project
+*.sublime-workspace
