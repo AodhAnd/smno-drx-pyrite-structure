@@ -13,15 +13,24 @@
 
 % Make latex understand and use the typographic
 % rules of the language used in the document.
-\usepackage[english, french]{babel}
+\usepackage[english, frenchb]{babel}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Graphics (images, tables, ...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage[table]{xcolor}
+
 % Figures - TIKZ (Build figures inside LaTeX)
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,positioning,shadows,trees}
+
+\usepackage{subfig}
+% Make the standard latex tables look much better
+\usepackage{array}
+\usepackage{booktabs}
+% Enable row combination in tables
+\usepackage{multirow}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematics
@@ -46,7 +55,8 @@
 \usepackage{siunitx}
 \sisetup{decimalsymbol=comma}
 \sisetup{binary-units}
-\sisetup{detect-weight}
+\sisetup{detect-weight=true, detect-inline-weight=math}
+\sisetup{separate-uncertainty}
 \sisetup{inter-unit-product=\ensuremath{{} \cdot {}}}
 \usepackage{cancel}
 
@@ -62,6 +72,6 @@
 % Enables the use FiXme refferences. Syntax: \fxnote{...} %%%
 % When the document is in "final" version instead of "draft",
 % an error will occur for every FiXme under compilation.
-\usepackage[french, silent, draft]{fixme}
+\usepackage[french, silent]{fixme}
 \fxusetheme{color}
 \fxsetup{layout=marginclue,footnote}
