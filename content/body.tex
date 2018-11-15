@@ -62,6 +62,8 @@ Par cette étude macroscopique, on retiendra alors qu'\textit{a priori} le crist
 \section{Méthodes expérimentales}
 % Méthodes expérimentales DRX (Laue + SOLEIL/CRISTAL)
 
+\subsection{Diffraction sur monocristal : méthode de Laue}
+
 Une première expérience de diffraction de rayons X a été réalisée sur des dispositifs spécifiques présents au laboratoire IMPMC de Sorbonne Université, en utilisant la méthode de Laue en transmission (longueur d'onde polychromatique dans un certain intervalle, échantillon fixe pendant la mesure).
 
 La source de rayons X utilisée était un tube à anticathode en cuivre dont la raie \(K_{\alpha_1,\ce{Cu}}\) est de longueur d'onde \(\lambda_{K_{\alpha_1,\ce{Cu}}}=\SI{0.1545}{\nano\metre}\). La cathode en tungstène était excitée avec une tension de \SI{40}{\kilo\volt} (ce qui donne une longueur d'onde minimale \(\lambda_{min} \approx \SI{0.031}{\nano\metre}\)) et un courant de \SI{30}{\milli\ampere}. La lecture du cliché de diffraction de Laue a été réalisée à partir de films réutilisables photosensibles aux RX et numérisés après exposition avec un scanner du même constructeur.\fxnote{Trouver constructeur}
@@ -70,6 +72,7 @@ L'échantillon \textit{a priori} monocristallin, placé (après la source) à un
 Pour pouvoir observer un diagramme de diffraction et en déduire les éléments de symétrie du cristal puis la classe de Laue, il est nécessaire de l'orienter pour chaque cliché de manière à ce que le faisceau soit parallèle à un ou plusieurs axes et éléments de symétrie.\\
 Ici, on a positionné le cristal sous sa forme pyritoédrique manuellement et simplement par appréciation visuelle au travers d'une loupe. Ceci, de manière à ce que le faisceau incident arrive sur le cristal perpendiculairement à une arête verticale, dans l'axe d'une symétrie de type miroir.\\
 
+\subsection{Diffraction par méthode des poudres}
 
 Une mesure de diffraction sur synchrotron a également été réalisée sur la ligne CRISTAL du synchrotron SOLEIL.\fxnote{Citer la ligne CRISTAL} La mesure a été effectuée sur un échantillon poudreux de pyrite (\ce{FeS2}) avec un diffractomètre 2 cercles et pour une longueur d'onde incidente monochromatique correspondant à une énergie \(E_{i,s} = \SI{17017}{\electronvolt}\), soit \(\lambda_{i,s} = \SI{0.07285}{\nano\metre}\).
 % Le diffractogramme expérimental obtenu sur la \figref{fig:diffractogrammeSOLEIL} est analysé en \secref{sec:}
@@ -127,7 +130,7 @@ Notons que pour retrouver tous les axes de symétrie du cristal et déterminer l
 
 En regardant les tables de correspondance entre systèmes réticulaires, classes de Laue et groupes ponctuels\cite{JJRousseau2007,ShmueliIUCr2016}, on voit que le système cubique n'offre que deux classes de Laue possibles~: \hmn{m-3} ou \hmn{m-3m}.
 La seconde imposant la présence d'un axe de rotation d'ordre 4 est, de fait, incompatible avec le cliché obtenu.\\
-Les clichés de Laue sont nécessairement centrosymétriques d'après la loi de Friedel \fxnote{Citation needed.}, et on ne peut donc pas savoir l'on a affaire à groupe ponctuel centrosymétrique ou non. Dans notre cas, ceci laisse deux groupes ponctuels possibles, associés à la classe de Laue \hmn{m-3}~: \hmn{23} ou \hmn{m-3}.\fxnote{Fix hmn spacing.}
+Dans le cadre d'une diffusion élastique, les clichés de Laue sont nécessairement centrosymétriques d'après la loi de Friedel \cite{}\fxnote{Citation needed.}, et on ne peut donc pas savoir l'on a affaire à groupe ponctuel centrosymétrique ou non. Dans notre cas, ceci laisse deux groupes ponctuels possibles, associés à la classe de Laue \hmn{m-3}~: \hmn{23} ou \hmn{m-3}.\fxnote{Fix hmn spacing.}
 
 Pour déterminer lequel de ces groupes ponctuels est celui de la pyrite (\ce{FeS2}), il faudrait mener d'autres mesures physiques mais on se contentera ici de se référer à nouveau aux symmétries du cristal repérées précédemment.
 Puisque ce cristal comporte un centre d'inversion et des miroirs, on retrouve bien le groupe ponctuel pré-supposé~: \hmn{m-3}.
@@ -139,11 +142,12 @@ La méthode de Laue permet donc d'identifier les directions équivalentes, de re
 Mais elle ne permet pas de déterminer une structure cristallographique complète.
 
 Pour aller plus loin dans la détermination de la structure de la pyrite, on se propose d'utiliser une autre technique, de diffraction de poudre (méthode de Debye-Scherrer), avec un diffractomètre automatique sur synchrotron.\\
-De manière générale, la diffraction de poudre doit permettre, à partir des infromations de position angulaire et d'intensité des pics de diffraction, de remonter assez facilement jusqu'au mode de réseau, au groupe d'espace, aux paramètres de mailles et aux positions atomiques dans la maille.
-\\
+De manière générale, la diffraction de poudre doit permettre, à partir des informations de position angulaire et d'intensité des pics de diffraction, de remonter assez facilement jusqu'au mode de réseau, au groupe d'espace, aux paramètres de mailles et aux positions atomiques dans la maille.
+On se permet ici de réduire en poudre l'échantillon plutôt que d'utiliser la méthode du cristal tournant sur un monocristal dans la mesure où la pyrite est relativement abondante et qu'il est facile de se procurer des monocristaux naturels.\\
 Par ailleurs, les expériences sur synchrotron permettent d'avoir un grand flux de photons et une meilleure résolution angulaire (utile pour des échantillons multiphases ou composites) et de sélectionner une longueur d'onde précise et donc un faisceau bien monochromatique.\\
-On peut ainsi s'affranchir de divers problèmes liés aux équipements de laboratoire comme les forts signaux de fond, les dédoublements de pics et la nécessité d'adapter la source de rayons X (tube de Coolidge et filtre de sélection de raies) en fonction des échantillons observés.
+On peut ainsi s'affranchir de divers problèmes liés aux équipements de laboratoire comme les forts signaux de fond, les dédoublements de pics dûs aux raies \(K_{\alpha,1}\) et \(K_{\alpha,2}\) et la nécessité d'adapter la source de rayons X (tube de Coolidge et filtre de sélection de raies) en fonction des échantillons observés.
 En particulier, on relève que dans le cas présent pour l'échantillon de pyrite (\ce{FeS2}), la pertinence de l'utilisation d'une source de cuivre \ce{Cu} est discutable du fait de la présence d'un seuil d'absorption du fer proche des raies \(K_{\alpha,\ce{Cu}}\) causant un phénomène de fluorescence du fer de l'échantillon.
+Pour ce type d'échantillon, une source à anticathode en cobalt \ce{Co} pourrait par exemple être utilisée à la place.
 
 \section{Obtention du mode de réseau}
 % Plot données diffractogramme (gnuplot ? matplotlib ? octave ?)
@@ -157,7 +161,7 @@ En particulier, on relève que dans le cas présent pour l'échantillon de pyrit
 Le diffractogramme obtenu sur synchrotron est donné sur la \figref{fig:soleilPowderDiffractogram} et l'ensemble des valeurs relevées et calculées à partir de cette figure sont indiquées dans le \tableref{tab:peaksParameters}.
 
 \begin{figure}
-\caption{Diffractogramme de l'échantillon de poudre de pyrite (méthode de Debye-Scherrer) mesuré sur la ligne CRISTAL du synchrotron SOLEIL, pour une longueur d'onde \(\lambda_{i,s} = \SI{0.07285}{\nano\metre}\).}
+\caption{Diffractogramme de l'échantillon de poudre de pyrite (méthode de Debye-Scherrer) mesuré sur la ligne CRISTAL du synchrotron SOLEIL, pour une longueur d'onde \(\lambda_{i,s} = \SI{0.07285}{\nano\metre}\). Les intensités sont «normalisées» (divisées de manière à ce que l'intensité du pic de plus haute intensité atteigne la valeur 100).}
 \includegraphics[width=\columnwidth]{figures/diffractogramme_pyrite.pdf}
 \label{fig:soleilPowderDiffractogram}
 \end{figure}
@@ -252,11 +256,71 @@ a_{av} &= \SI{0.5417 \pm 0.000130}{\nano\metre} \\
 % Rasion de la faible intensité de la raie : 300 + 221 (extinction systématique de la 300)
 % Explication extinctions élément de symétrie (élément translatoire => facteur de structure)
 
+Comme remarqué précédemment, les raies associées aux familles de plans réticulaires \hmn{(100)}, \hmn{(110)} et \hmn{(310)} sont absentes du diffractogramme et ces extinctions ont été identifiées comme étant dues au terme de motif du facteur de forme.
+
+On se réfère à la Table 3.1.4.1 des Tables Internationales de Cristallographie, \textit{Volume A} \cite{LooijengaVosIUCr2006} afin d'identifier le groupe d'espace exact à partir des conditions de réflexion.\\
+Le groupe ponctuel et le mode de réseau étant connus pour être respectivement \hmn{m-3} et \hmn{P}, on restreint les possibilités aux seuls groupes d'espace \hmn{Pm-3}, \hmn{Pa-3} et \hmn{Pn-3}.
+On peut aussi procéder à l'élimination immédiate du groupe \hmn{Pm-3} puisque celui-ci n'entraîne aucune extinction systématique alors que l'on sait qu'il y en a.\\
+Enfin, on s'intéresse à la parité des raies éteintes pour le diffractogramme de la pyrite.
+La différence entre \hmn{Pa-3} et \hmn{Pn-3} réside dans les conditions de réflexion pour des familles de plans d'indices \hmn{(0kl)} (les indices sont permutables de manière cyclique pour \hmn{Pa-3} et quelconque pour \hmn{Pn-3}).
+Le groupe \hmn{Pn-3} comporte des réflexions pour tous \(k + l\) pairs dans le cas où \(h\) est nul.
+Par permutation d'indices, on remarque que cette condition imposerait la présence de raies de diffraction d'indices \hmn{(110)} et \hmn{(310)}.
+Puisque ce n'est pas le cas, on en déduit qu'il ne s'agit pas du bon groupe d'espace mais que la pyrite appartient au groupe \hmn{Pa-3}.
+Le \(a\) qui vient remplacer le \(m\) dans la notation du groupe ponctuel correspond à l'introduction d'un élément de symétrie translatoire de type miroir avec glissement axial (forcément parallèle au vecteur \(\vec{a}\) du réseau de Bravais, dans un réseau cubique primitif).\\
+Ceci est confirmé par le fait que la condition de réflexion de ce groupe pour les mêmes conditions que précédemment, avec \hmn{(0kl)}, est que seul \(k\) soit pair.
+Par permutation cyclique pour retrouver les raies identifiées comme éteintes \hmn{(110)} et \hmn{(310)}, la condition pour une réflexion est que \(h\) soit pair.
+Puisque sur ces deux raies \(h\) est impair, il est donc normal qu'une extinction survienne.
+
+Par ailleurs, les conditions de réflexion pour des configurations avec un seul indice non nul \hmn{00l} sont synonymes d'un \(l\) pair (quelles que soient les permutations, cycliques ou non).\\
+Ceci explique non seulement l'extinction constatée de la raie \hmn{(100)} mais également la faible intensité de la 6e raie du diffractogramme, censée comporter les contributions des familles de plans \hmn{(221)} et \hmn{(300)}.
+Dans la pratique, on ne voit qu'une faible contribution des plans \hmn{(221)}.
+
 \section{Positions atomiques}
 % Positions atomiques (motif), sites de Wyckoff, ...
 % Modèle VESTA
 % Comparaison diagramme poudres VESTA vs expérimental SOLEIL
 % Affinement par la méthode de Rietveld, vs. par tatonnement
+
+
+Les derniers paramètres nécessaires à décrire complètement la structure de la pyrite (\ce{FeS2}) sont les positions atomiques au sein de la maille.
+
+On commence par repérér la liste des sites de Wyckoff indiqués sur la fiche du groupe d'espace \hmn{Pa-3} (groupe \no 205) des Tables Internationales de Cristallographie, \textit{Volume A} \cite{IToCIUCr2016}, également accessibles sur le serveur de cristallographie de Bilbao \cite{BilbaoServer, Bilbao1,Bilbao2}.\\
+Les premiers types de sites \(a\) et \(b\) de plus haute symétrie sont de multiplicité 4 et sont de même symétrie.
+La deuxième plus basse multiplicité correspond aux sites \(c\) est 8, soit le double des sites \(a\) et \(b\) ce qui permet de faire coincider 4 unités formulaires de \ce{FeS2} avec les atomes de fer sur les premiers types de sites (on propose les sites \(a\)) et les atomes de soufre sur les sites \(c\).
+
+De toutes les analyses précédentes notamment sur le groupe d'espace et les positions atomiques, on en déduit le facteur de structure associé à la pyrite~:
+\begin{flalign}
+F_{hkl} &= F_{\ce{Fe}} + F_{\ce{S}} &\\
+        &= f_{\ce{Fe}} \left(\sum_j e^{-2\imath\pi(hx_j + ky_j + lz_j)}\right) \nonumber&\\
+        &\quad + f_{\ce{S}} \left( \sum_j e^{-2\imath\pi(hx_j + ky_j + lz_j)}\right) \nonumber.&
+\end{flalign}
+où \(F_{\ce{Fe}}\) et \(F_{\ce{S}}\) correspondent aux facteurs de structure tenant compte de la liste des positions respectives de chacun des atomes de Fer et de Soufre.
+
+À partir des coordonnées des sites de Wyckoff occupés et du groupe d'espace on est également en mesure de créer un modèle numérique de la maille élémentaire de la pyrite, comme celui de la \figref{fig:VestaModel}, à condition de faire une supposition sur les positions des atomes de Soufre dans la maille puisque seules des positions dépendant d'un offset \(x\) sont précisées comme coordonnées dans les Tables Internationales.
+On fait la supposition initiale que ces atomes sont situés au centre des tétraèdres formés par les atomes de Fer (\(x = 1/4\)).\\
+À partir de ce modèle il est également possible de générer un diagramme théorique de diffraction de poudre à comparer avec le diagramme expérimental obtenu sur synchrotron.
+On se rend aisément compte du fait que les positions choisies arbitrairement pour les atomes de Soufre introduisent une symétrie plus grande que ne devrait fournir réellement le groupe d'espace, ce qui se traduit par un plus grand nombre d'extinctions que dans la réalité.
+Il s'avère donc nécessaire d'affiner les paramètres de la structure pour retrouver les positions exactes des atomes de Soufre dans la maille.
+
+Une première méthode, probablement la plus simple pour le faible nombre de paramètres présents ici (seule l'inconnue sur la valeur de \(c\) manque), consiste en une méthode par tâtonnements (ou \textit{trial and error})~: on ajuste la valeur de x manuellement jusqu'à arriver à un diffractogramme suffisament ressemblant à la version obtenur expérimentalement.\\
+Une autre méthode plus précise et plus efficace peut être la méthode de Rietveld. Il s'agit d'une méthode numérique qui consiste à simuler successivement des diffractogrammes en les comparant à un diffractogramme expérimental (d'où la nécessité d'une mesure de bonne qualité), et en ajustant à chaque étape différents paramètres dont les positions atomiques qui influent directement sur le facteur de structure.
+De manière générale, l'intensité des raies est proportionnelle au carré du module du facteur de structure~:
+\begin{equation}
+I_{hkl} \propto \left| F_{hkl} \right|^2,
+\end{equation}
+si bien que l'on peut obtenir une mesure de la qualité de l'affinement par comparaison avec l'intensité des raies expérimentales.\fxnote{Add refinement quality factor}
+Il s'agit alors simplement d'appliquer une méthode des moindres carrés pour minimiser l'erreur entre théorie et mesure.\\
+En plus du simple facteur de structure et des positions atomiques, d'autres paramètres liés à la polarisation incidente (facteur de Lorentz), à l'agitation thermique (facteur de Debye-Waller), à l'absorption, à la forme et à la largeur des raies doivent être ajoutés selon la configuration de l'expérience et le degré de précision désiré \cite{AlbinatiIUCr2006}.
+
+\begin{figure}
+\caption{Modèle de structure de la pyrite, réalisé avec le logiciel VESTA. Les positions atomiques sont les positions réelles après affinement de la structure}
+\includegraphics[width=\columnwidth]{figures/model_VESTA_FeS2}
+\label{fig:VestaModel}
+\end{figure}
+
+On se contente ici de procéder par tâtonnements, ce qui permet de trouver une valeur pour \(x\) d'environ \num{0.38}.\\
+Les atomes 
+% Ajouter tableaux positions
 
 \section{Conclusion}
 
