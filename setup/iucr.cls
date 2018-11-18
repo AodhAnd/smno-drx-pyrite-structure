@@ -3958,6 +3958,59 @@
   \TABfalse
 }
 
+\renewenvironment{table*}[1][\relax]              % TABLE (not float)
+{%                                               % Begin new environment
+  \if\relax#1\else\renewcommand{\thetable}{#1}\fi  % Override autonumbering
+  \global\fn@ffsetfalse%                         % Don't offset footnotes
+  \ifPstyl@\else\ifVstyl@\else
+    \def\hline{\noindent%                        % resize hlines
+      \kern0pt\hbox to 0pt{%
+        \vbox to 0pt{%
+          \hrule height .1 pt width \textwidth%
+        }%
+      }%
+      \\%
+    }%
+  \fi\fi
+  \vskip 12pt plus 2pt minus 12pt%
+  \noindent%
+  \ifsingl@col%
+    \begin{minipage}{\textwidth}%
+  \else%
+    \hskip-\leftskip%                      % back out of indented environments
+    \begin{minipage}{\textwidth}%
+    \parindent-6pt%
+  \fi%
+  \refstepcounter{mpfootnote}                    % start footnotes with dagger
+  \ifOstyl@\begin{center}\fi
+  \refstepcounter{table}%
+  \TABtrue%
+  \ifIstyl@%
+    \fontsize{8}{10}\selectfont
+  \else%
+    \begin{small}%
+  \fi
+}
+{%                                               % End environment
+  \ifIstyl@%
+  \else%
+  \end{small}%
+  \fi
+  \ifAstyl@\hrule height .1pt\fi%                % end rule for new Acta tables
+  \ifCstyl@\hrule height .1pt\fi%                % end rule for new Acta tables
+  \ifDstyl@\hrule height .1pt\fi%                % end rule for new Acta tables
+  \ifEstyl@\hrule height .1pt\fi%                % end rule for new Acta tables
+  \ifSstyl@\hrule height .1pt\fi%                % end rule for new Acta tables
+  \ifVstyl@\hrule height .1pt\fi%                % end rule for vanilla tables
+  \ifXstyl@\hrule height .1pt\fi%                % end rule for JSR tables
+  \ifYstyl@\hrule height .1pt\fi%                % end rule for JSR tables
+  \vskip 6pt plus 2pt minus 2pt%
+  \ifOstyl@\end{center}\fi
+  \end{minipage}%
+  \vskip 12pt plus 2 pt minus 6pt%
+  \TABfalse
+}
+
 \renewenvironment{thebibliography}[1]            % BIBLIOGRAPHY
 {%                                               % Begin new environment
   \penalty-2000\medskip%
@@ -6570,9 +6623,9 @@
 % IUCr citations are similar to the "dcu" style within harvard.sty, but
 % require the conjunction to be changed to '&'; also abbreviated citations
 % ('et al.') are always used.
-\citationstyle{dcu}                              % (Doe, 1990; Soape, 1991)
+% \citationstyle{dcu}                              % (Doe, 1990; Soape, 1991)
 \renewcommand{\harvardand}{\&}                   % (Doe & Soape, 1990)
-\citationmode{abbr}                              % (Doe et al., 1990)
+% \citationmode{abbr}                              % (Doe et al., 1990)
 
 \newcommand{\referencelist}[1][iucr]{%           % BibTeX REFERENCE LIST
   \renewcommand{\section}{\normalsection}{%                   % Suppress section head
@@ -6583,7 +6636,8 @@
   \ifIstyl@%
     \bibliographystyle{iucrit}%                  % Use IUCr IT bibliography style
   \else%
-    \bibliographystyle{iucr}%                    % Use IUCr bibliography style
+    % \bibliographystyle{iucr}%                    % Use IUCr bibliography style
+    \bibliographystyle{acm}%                    % Use IUCr bibliography style
   \fi
 }
 

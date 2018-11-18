@@ -54,55 +54,75 @@
 \makeatother
 
 % Hermann-Mauguin notation (for cristallographic symmetries)
-\ExplSyntaxOn
-\NewDocumentCommand{\hmn}{m}
- {
-  \ensuremath
-   {
-    \hermannmauguin_group:n { #1 }
-   }
- }
+\newcommand{\hmn}[1]{% Hermann-Maguin notation
+  \ensuremath{\begingroup\setupHMN #1\endgroup}%
+}
 
-\tl_new:N \l_hermannmauguin_input_tl
-\tl_new:N \l_hermannmauguin_output_tl
+\newcommand{\setupHMN}{%
+  \doHMN{-}{\HMNoverline}%
+  \doHMN{*}{\HMNminverse}%
+  \doHMN{i}{\infty}
+}
 
-\cs_new_protected:Nn \hermannmauguin_group:n
- {
-  \tl_set:Nn \l_hermannmauguin_input_tl { #1 }
-  \tl_clear:N \l_hermannmauguin_output_tl
-  \tl_map_inline:Nn \l_hermannmauguin_input_tl
-   {
-    \__hermannmauguin_item:n { ##1 }
-   }
-  \! % kill the first \,
-  \tl_use:N \l_hermannmauguin_output_tl
- }
+\newcommand{\doHMN}[2]{%
+  \begingroup\lccode`~=`#1
+  \lowercase{\endgroup\let~}#2%
+  \mathcode`#1="8000
+}
 
-\cs_new_protected:Nn \__hermannmauguin_item:n
- {
-  \str_case:nnF { #1 }
-   {
-    {*}{ \__hermannmauguin_put:n { \__hermannmauguin_inverse:Nn } }
-    {-}{ \__hermannmauguin_put:n { \__hermannmauguin_overline:Nn } }
-    {i}{ \__hermannmauguin_put:n { \,\infty } }
-   }
-   { \__hermannmauguin_put:n { \, {#1} } }
- }
+\newcommand{\HMNminverse}[1]{\frac{#1}{m}}
+\newcommand{\HMNoverline}[1]{\mkern1mu\overline{\mkern-1mu#1\mkern-1mu}\mkern1mu}
 
-\cs_new_protected:Nn \__hermannmauguin_put:n
- {
-  \tl_put_right:Nn \l_hermannmauguin_output_tl { #1 }
- }
 
-\cs_new_protected:Nn \__hermannmauguin_overline:Nn
- {% #1 should be \,; #2 is the number to operate on
-  #1 \mkern1mu\overline{\mkern-1mu#2\mkern-1mu}\mkern1mu
- }
-\cs_new_protected:Nn \__hermannmauguin_inverse:Nn
- {% #1 should be \,; #2 is the number to operate on
-  #1 \frac{ #2 } { m }
- }
-\ExplSyntaxOff
+% \ExplSyntaxOn
+% \NewDocumentCommand{\hmn}{m}
+%  {
+%   \ensuremath
+%    {
+%     \hermannmauguin_group:n { #1 }
+%    }
+%  }
+
+% \tl_new:N \l_hermannmauguin_input_tl
+% \tl_new:N \l_hermannmauguin_output_tl
+
+% \cs_new_protected:Nn \hermannmauguin_group:n
+%  {
+%   \tl_set:Nn \l_hermannmauguin_input_tl { #1 }
+%   \tl_clear:N \l_hermannmauguin_output_tl
+%   \tl_map_inline:Nn \l_hermannmauguin_input_tl
+%    {
+%     \__hermannmauguin_item:n { ##1 }
+%    }
+%   \! % kill the first \,
+%   \tl_use:N \l_hermannmauguin_output_tl
+%  }
+
+% \cs_new_protected:Nn \__hermannmauguin_item:n
+%  {
+%   \str_case:nnF { #1 }
+%    {
+%     {*}{ \__hermannmauguin_put:n { \__hermannmauguin_inverse:Nn } }
+%     {-}{ \__hermannmauguin_put:n { \__hermannmauguin_overline:Nn } }
+%     {i}{ \__hermannmauguin_put:n { \,\infty } }
+%    }
+%    { \__hermannmauguin_put:n { \, {#1} } }
+%  }
+
+% \cs_new_protected:Nn \__hermannmauguin_put:n
+%  {
+%   \tl_put_right:Nn \l_hermannmauguin_output_tl { #1 }
+%  }
+
+% \cs_new_protected:Nn \__hermannmauguin_overline:Nn
+%  {% #1 should be \,; #2 is the number to operate on
+%   #1 \mkern1mu\overline{\mkern-1mu#2\mkern-1mu}\mkern1mu
+%  }
+% \cs_new_protected:Nn \__hermannmauguin_inverse:Nn
+%  {% #1 should be \,; #2 is the number to operate on
+%   #1 \frac{ #2 } { m }
+%  }
+% \ExplSyntaxOff
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                 TIKZ SETTINGS                     %
